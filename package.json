@@ -1,0 +1,20 @@
+{
+  "name": "chai-kahlan",
+  "description": "Kahlan's matchers for chai.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crysalead-js/chai-kahlan.git"
+  },
+  "scripts": {
+    "test": "mocha",
+    "dist": "browserify browser.js > chai-kahlan.js"
+  },
+  "dependencies": {
+    "chai-jasmine": "^1.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
