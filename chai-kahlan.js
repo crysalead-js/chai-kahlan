@@ -3328,7 +3328,12 @@ module.exports = function (chai, _) {
     , flag = _.flag;
 
   // Overrides Spies so it won't rely on Jasmine's env
-  var spyRegistry = new jasmine.SpyRegistry();
+  var spies = [];
+  var spyRegistry = new jasmine.SpyRegistry({
+    currentSpies: function() {
+      return spies;
+    }
+  });
   jasmine.getEnv().spyOn = function() {
     return spyRegistry.spyOn.apply(spyRegistry, arguments);
   };
@@ -6942,7 +6947,12 @@ module.exports = function (chai, _) {
     , flag = _.flag;
 
   // Overrides Spies so it won't rely on Jasmine's env
-  var spyRegistry = new jasmine.SpyRegistry();
+  var spies = [];
+  var spyRegistry = new jasmine.SpyRegistry({
+    currentSpies: function() {
+      return spies;
+    }
+  });
   jasmine.getEnv().spyOn = function() {
     return spyRegistry.spyOn.apply(spyRegistry, arguments);
   };

@@ -1,7 +1,7 @@
 {
   "name": "chai-kahlan",
   "description": "Kahlan's matchers for chai.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "dist": "browserify browser.js > chai-kahlan.js"
   },
   "dependencies": {
-    "chai-jasmine": "^1.0.6"
+    "chai-jasmine": "^1.0.7"
   },
   "devDependencies": {
     "mocha": "^2.3.4"
