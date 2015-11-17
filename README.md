@@ -14,6 +14,14 @@ npm install chai-kahlan --save-dev;
 
 ## Usage
 
+node:
 ```js
 require('chai-kahlan');
+```
+
+browser:
+```js
+<script src="vendor/mocha/mocha.js" type="text/javascript"></script>
+<script src="vendor/chai/chai.js" type="text/javascript"></script>
+<script src="vendor/chai-kahlan/chai-kahlan.js" type="text/javascript"></script>
 ```
