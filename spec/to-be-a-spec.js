@@ -60,9 +60,27 @@ describe("toBeA", function() {
 
   });
 
-  it("passes if null is NULL", function() {
+  it("passes if null is null", function() {
 
     expect(null).toBeA('null');
+
+  });
+
+  it("passes if undefined is undefined", function() {
+
+    expect(undefined).toBeA('undefined');
+
+  });
+
+  it("passes if a function is a function", function() {
+
+    expect(function(){}).toBeA('function');
+
+  });
+
+  it("passes if a Symbol is a symbol", function() {
+
+    expect(Symbol()).toBeA('symbol');
 
   });
 

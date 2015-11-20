@@ -29,18 +29,32 @@ module.exports = function (chai, _) {
       if (typeof value === 'boolean') {
         return 'boolean';
       }
+      if (typeof value === 'function') {
+        return 'function';
+      }
       if (typeof value === 'number') {
         return value % 1 === 0 ? 'integer' : 'double';
       }
+      if (typeof value === 'symbol') {
+        return 'symbol';
+      }
+      return 'undefined';
     }
 
+    var article;
     var type = getType(this._obj);
-    var article = ~[ 'a', 'e', 'i', 'o', 'u' ].indexOf(type.charAt(0)) ? 'an ' : 'a ';
+
+    if (this._obj != null) {
+      article = ~[ 'a', 'e', 'i', 'o', 'u' ].indexOf(type.charAt(0)) ? 'an ' : 'a ';
+    } else {
+      article = 'like ';
+    }
 
     this.assert(
         type === expected
-      , 'expected #{this} to be ' + article + type
-      , 'expected #{this} not to be ' + article + type
+      , 'expected #{this} to be ' + article + '#{exp}'
+      , 'expected #{this} not to be ' + article + '#{exp}'
+      , type
     );
   });
 
